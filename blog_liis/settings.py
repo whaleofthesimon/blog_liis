@@ -11,17 +11,17 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import rest_framework.authentication
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-import rest_framework.authentication
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s&=hc7@4mkzx5!zorh5vaztvt0jzy!zd&63)0pp3ep)*9g5g44'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
