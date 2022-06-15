@@ -28,4 +28,4 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ('topic', 'filling', 'author', 'access')
+        fields = ('topic', 'filling', 'author', 'is_private')

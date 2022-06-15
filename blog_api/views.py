@@ -21,5 +21,5 @@ class BlogViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         if not self.request.user.is_authenticated:
-            return Article.objects.filter(access='public')
+            return Article.objects.filter(is_private=False)
         return Article.objects.all()

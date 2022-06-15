@@ -25,9 +25,5 @@ User = get_user_model()
 class Article(models.Model):
     topic = models.CharField(verbose_name='Заголовок статьи', unique=True, max_length=256)
     filling = models.TextField(verbose_name='Тело статьи')
-    article_access_types = (
-        ('public', 'Публичная статья'),
-        ('for_subscribers', 'Только для подписчиков')
-    )
-    access = models.CharField(verbose_name='Доступность статьи', choices=article_access_types, max_length=32)
     author = models.ForeignKey(User, verbose_name='Автор статьи', on_delete=models.CASCADE)
+    is_private = models.BooleanField(verbose_name='Приватная статья', default=False, db_index=True)
