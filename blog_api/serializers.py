@@ -29,3 +29,4 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('topic', 'filling', 'author', 'is_private')
+        read_only_fields = ('author',)
