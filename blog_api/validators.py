@@ -4,12 +4,6 @@ from django.utils.translation import ngettext
 
 
 class FullCommonValidator:
-    """
-    Validate whether the password is of a minimum length = 8.
-    Validate whether the password has more than 1 digit.
-    Validate whether the password has more than 1 letter.
-    """
-
     def __init__(self, min_length=8):
         self.min_length = min_length
 

@@ -1,1 +1,5 @@
 .env
+db.sqlite3
+/venv_blog
+**/__pycache__
+/.idea

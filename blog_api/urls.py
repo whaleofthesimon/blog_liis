@@ -1,12 +1,15 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+
 from blog_api.views import *
 
 app_name = 'blog_api'
+
+router = routers.SimpleRouter()
+router.register(r'articles', BlogViewSet, basename='article')
+
 urlpatterns = [
-    path('timeline/', TimelineView.as_view()),
-    path('article-create/', ArticleCreationView.as_view()),
-    path('article-edit/<int:pk>/', ArticleEditingView.as_view()),
     path('registration/', RegistrationView.as_view()),
-    path('administrate-users/<int:pk>/', UserAdministrationView.as_view()),
-    path('administrate-users/all/', UserAdministrationListView.as_view()),
+    path('', include(router.urls))
+
 ]
